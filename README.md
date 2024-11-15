@@ -177,6 +177,10 @@ JWT_EXPIRED_IN=value
 
 COOKIES_EXPIRED_IN=value
 
+GOOGLE_CLIENT_ID=value
+
+GOOGLE_CLIENT_SECRET=value
+
 Replace value with your actual values for each configuration.
 
 3. **Running the Project**
@@ -202,7 +206,7 @@ To stop the project, run:
 
 2. **Create Two .env Files**
 
-Backend .env file (located in backend/.env)
+**Backend .env file (located in backend/.env)**
 
 Contents of the .env file:
 
@@ -238,11 +242,11 @@ JWT_EXPIRED_IN=value
 
 COOKIES_EXPIRED_IN=value
 
-Root .env file (located in the project root folder)
+**Root .env file (located in the project root folder)**
 
 Contents of the .env file:
 
-Database Configuration (matching with backend/.env):
+Database Configuration (**matching with backend/.env**):
 
 POSTGRES_USER=value
 
@@ -252,7 +256,11 @@ POSTGRES_DATABASE=value
 
 POSTGRES_PORT=value
 
-Replace value with your actual values for each configuration.
+GOOGLE_CLIENT_ID=value
+
+GOOGLE_CLIENT_SECRET=value
+
+**Replace value with your actual values for each configuration.**
 
 3. **Running the Project:**
    
