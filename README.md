@@ -181,7 +181,7 @@ GOOGLE_CLIENT_ID=value
 
 GOOGLE_CLIENT_SECRET=value
 
-Replace value with your actual values for each configuration.
+**Replace value with your actual values for each configuration.**
 
 3. **Running the Project**
    
