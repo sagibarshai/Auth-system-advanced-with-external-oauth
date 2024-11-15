@@ -143,7 +143,7 @@ Inside the backend folder, create a file named .env to hold the environment vari
 
 File Location: backend/.env
 
-Contents of the .env file:
+**Contents of the .env file:**
 
 General Configuration:
 
@@ -208,7 +208,7 @@ To stop the project, run:
 
 **Backend .env file (located in backend/.env)**
 
-Contents of the .env file:
+**Contents of the .env file:**
 
 General Configuration:
 
@@ -244,7 +244,7 @@ COOKIES_EXPIRED_IN=value
 
 **Root .env file (located in the project root folder)**
 
-Contents of the .env file:
+**Contents of the .env file:**
 
 Database Configuration (**matching with backend/.env**):
 
