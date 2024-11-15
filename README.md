@@ -8,6 +8,8 @@ This project provides a secure and well-structured Node.js Express TypeScript ap
 
 # User Authentication:
 
+Signup and Signin with google on one endpoint.
+
 Signup with email, password and other extra fields
 
 Signin with email and password
