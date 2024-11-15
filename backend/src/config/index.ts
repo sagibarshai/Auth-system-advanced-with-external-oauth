@@ -36,6 +36,9 @@ if (!process.env.GOOGLE_CLIENT_SECRET) {
 if (!process.env.GOOGLE_CLIENT_ID) {
   throw new Error("GOOGLE_CLIENT_ID must be define inside .env file");
 }
+if (!process.env.GOOGLE_CALLBACK_ENDPOINT) {
+  throw new Error("GOOGLE_CALLBACK_ENDPOINT must be define inside .env file");
+}
 if (!process.env.JWT_EXPIRED_IN) {
   console.warn("JWT_EXPIRED_IN can be define inside .env file");
 }
@@ -43,10 +46,15 @@ if (!process.env.COOKIES_EXPIRED_IN) {
   console.warn("COOKIES_EXPIRED_IN can be define inside .env file");
 }
 
+const isProd = Boolean(process.env.NODE_ENV);
+
+const baseURL = isProd ? "https://ProductionDomainUrl.com" : "http://localhost";
+const port = Number(process.env.PORT);
+
 export const config = {
-  PORT: Number(process.env.PORT),
-  PROD: Boolean(process.env.NODE_ENV),
-  BASE_URL: Boolean(process.env.NODE_ENV) ? "https://ProductionDomainUrl.com" : "http://localhost",
+  PORT: port,
+  PROD: isProd,
+  BASE_URL: baseURL,
   JWT: {
     EXPIRED_IN: Number(process.env.JWT_EXPIRED_IN) || 60 * 30, // in 's'
   },
@@ -78,5 +86,6 @@ export const config = {
   GOOGLE_OAUTH: {
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    GOOGLE_CALLBACK_URL: `${baseURL}:${port}${process.env.GOOGLE_CALLBACK_ENDPOINT}`,
   },
 };

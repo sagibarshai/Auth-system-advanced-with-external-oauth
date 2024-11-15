@@ -4,7 +4,7 @@ interface StoredUser {
   id: number;
   first_name?: string;
   last_name?: string;
-  email?: string;
+  email: string;
   password?: string;
   register_at: Date;
   updated_at: Date;
@@ -12,14 +12,14 @@ interface StoredUser {
   is_verified: boolean;
   verification_token?: string;
   phone_number?: string;
-  provider: string;
+  provider: "app" | "google";
 }
 
 export interface ReturnedStoredUser {
   id: number;
   firstName?: string;
   lastName?: string;
-  email?: string;
+  email: string;
   password?: string;
   phoneNumber?: string;
   registerAt: Date;
@@ -27,7 +27,7 @@ export interface ReturnedStoredUser {
   lastLogin: Date;
   isVerified: boolean;
   verificationToken?: string;
-  provider: string;
+  provider: "app" | "google";
 }
 
 export interface SafeUser extends Omit<ReturnedStoredUser, "password" | "verificationToken"> {}

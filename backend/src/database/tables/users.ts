@@ -6,7 +6,7 @@ export const createUsersTableIfNotExists = async () => {
         id SERIAL PRIMARY KEY,
         first_name VARCHAR(200) CHECK(LENGTH(first_name) > 1),
         last_name VARCHAR(200) CHECK(LENGTH(last_name) > 1),
-        email VARCHAR(255) CHECK(LENGTH(email) > 6) UNIQUE,
+        email VARCHAR(255) CHECK(LENGTH(email) > 6) UNIQUE NOT NULL,
         password VARCHAR(255),
         register_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
