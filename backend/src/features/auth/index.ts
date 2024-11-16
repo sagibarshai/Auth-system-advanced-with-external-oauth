@@ -3,7 +3,7 @@ import { signUpRouter } from "./sign-up/route";
 import { SignInRouter } from "./sign-in/route";
 import { SignOutRouter } from "./sign-out/route";
 import { emailRouter } from "./email-verification/route";
-import { GoogleRouter } from "./google";
+import { GoogleRouter } from "./google-oauth/route";
 
 const router = Router();
 

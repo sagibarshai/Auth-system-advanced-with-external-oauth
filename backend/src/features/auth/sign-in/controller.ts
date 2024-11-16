@@ -18,9 +18,9 @@ export const signInController = async (req: SignUpRequest, res: Response, next: 
     const storedUser = await SelectUnsafeUserModel(req.body.email);
     if (!storedUser) return next(BadRequestError([{ message: "Wrong Credentials" }]));
     if (!storedUser.isVerified) return next(ForbiddenError([{ message: "Email not verify, please check user email" }]));
-    // password cannot be null here because this route handle only regular email and password register
-    // password is null only when signup with external provider
+    // password shouldn't be null here because this route handle only regular email and password register
     if (!storedUser.password)
+      // password is null only when the user is signup with external provider
       return next(
         BadRequestError([
           {
