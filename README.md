@@ -275,3 +275,19 @@ This will build the services and start them using the environment variables defi
 To stop the project, run:
 
 **docker-compose down**
+
+---
+
+# End Points:
+
+**signup** - /api/auth/signup, method = post 
+
+**signin** - /api/auth/signin, method = post
+
+**signout** - /api/auth/signout, method = post
+
+**auth with google(signin and signup)** - /api/auth/google, method = post
+
+**verify email** - /api/emailVerification/:id/:token, method = get
+
+**resend email verification** - /api/auth/emailVerification/resend, method = post
