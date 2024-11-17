@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { refreshTokenAndSetCookie, verifyToken } from "../../utils/jwt";
+import { deleteTokenCookie, refreshTokenAndSetCookie, verifyToken } from "../../utils/jwt";
 
 export const currentUserMiddleware = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -7,6 +7,7 @@ export const currentUserMiddleware = async (req: Request, res: Response, next: N
 
     if (!token) {
       req.currentUser = undefined;
+      deleteTokenCookie(req);
     } else {
       const safeUser = verifyToken(token);
       if (safeUser) {
