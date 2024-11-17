@@ -242,6 +242,11 @@ JWT_EXPIRED_IN=value
 
 COOKIES_EXPIRED_IN=value
 
+GOOGLE_CLIENT_ID=value
+
+GOOGLE_CLIENT_SECRET=value
+
+
 **Root .env file (located in the project root folder)**
 
 **Contents of the .env file:**
@@ -256,9 +261,6 @@ POSTGRES_DATABASE=value
 
 POSTGRES_PORT=value
 
-GOOGLE_CLIENT_ID=value
-
-GOOGLE_CLIENT_SECRET=value
 
 **Replace value with your actual values for each configuration.**
 
